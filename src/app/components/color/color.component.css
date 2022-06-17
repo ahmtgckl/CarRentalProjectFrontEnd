@@ -1,0 +1,17 @@
+.list-group {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width:200px;
+}
+
+
+.active{
+  background: #000 !important;
+  border-block-color: black;
+}
+
+
+.list-group-item{
+  font-weight:500;
+}

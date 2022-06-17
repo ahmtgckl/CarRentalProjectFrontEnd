@@ -1,0 +1,18 @@
+.list-group {
+  margin: 10px;
+  width:200px;
+}
+
+
+.active{
+  background: #000 !important;
+  border-block-color: black;
+}
+
+
+.list-group-item{
+  font-weight:500;
+}
+
+
+
