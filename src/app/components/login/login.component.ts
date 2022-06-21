@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl,Validators,FormBuilder } from "@angular/forms";
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { LocalstorageService } from 'src/app/services/localstorage.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,57 +14,45 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm:FormGroup;
+  userEmail:string;
+  @Input() user1:User;
 
   constructor(private formBuilder:FormBuilder,
     private authService:AuthService,
-    private toastrService:ToastrService) { }
+    private toastrService:ToastrService,
+    private userService:UserService,
+    private router:Router,
+    private localStorage:LocalstorageService) { }
 
   ngOnInit(): void {
-
-    this.createLoginForm();
+    this.createLoginForm()
 
 
   }
-
-
-
   createLoginForm(){
-    this.loginForm = this.formBuilder.group({
+    this.loginForm=this.formBuilder.group({
       email:["",Validators.required],
-      password:["",Validators.required]
+      password:["",Validators.required],
     })
   }
 
-
-
   login(){
-    if(this.loginForm.valid){
-      console.log(this.loginForm.value);
-      let loginModel = Object.assign({},this.loginForm.value)
-
-
+    if (this.loginForm.valid) {
+     // console.log(this.loginForm.value);
+      let loginModel=Object.assign({},this.loginForm.value)
       this.authService.login(loginModel).subscribe(response=>{
-        this.toastrService.info(response.message)
-        localStorage.setItem("token",response.data.token)
+        this.localStorage.saveToken(response.data.token)
+        this.authService.decodedTokenKey=this.authService.decodedToken(response.data.token);
+        console.log(this.authService.getUserInfo());
+        this.router.navigate(["/"]);
+        this.toastrService.info("Giriş Yapıldı")
 
       },responseError=>{
-        console.log(responseError)
-        //toastrService ile bu bölüm geliştirilebilir.
+        //console.log(responseError);
+        this.toastrService.error(responseError.error)
       })
     }
-
-
   }
-
-
-
-
-
-
-
-
-
-
 
 
 }

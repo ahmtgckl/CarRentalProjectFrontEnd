@@ -1,1 +1,73 @@
-<p>payment works!</p>
+<div class="card text-center mt-5" >
+  <div class="card-header" >
+    Ödeme
+  </div>
+  <div class="table">
+    <tr>
+      <th>Kiralanacak Gün sayısı: {{rentalDay}}</th>
+    </tr>
+    <tr>
+      <th>Ödenecek Tutar: {{totalAmountInfo}}  </th>
+    </tr>
+  </div>
+</div>
+<br>
+<div class="col-12 mt-3">
+
+  <input
+    class="form-control"
+    type="text"
+    placeholder="Kart üzerindeki isim"
+    aria-label="default input example"
+    style="text-align: center"
+  />
+</div>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-4">
+    <label for="creditCardNumber" class="form-label">Kart Numarası </label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="xxxx-xxxx-xxxx-xxxx"
+      aria-label="default input example"
+      style="text-align: center"
+      maxlength="16"
+      id="creditCardNumber"
+      type="tel"
+    />
+  </div>
+
+  <div class="col-md-4">
+    <label for="expirationDate" class="form-label">Son Kullanma Tarihi</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="__/__"
+      aria-label="default input example"
+      style="text-align: center"
+      id="expirationDate"
+      maxlength="5"
+
+    />
+  </div>
+  <div class="col-md-4">
+    <label for="securityCode" class="form-label">Güvenlik Kodu</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="___"
+      aria-label="default input example"
+      style="text-align: center"
+      id="securityCode"
+      maxlength="3"
+    />
+  </div>
+</div>
+<br>
+<br>
+<div class="col-12 d-flex justify-content-end">
+    <button type="submit" class="btn btn-outline-success"  (click)="add()" >Ödeme Yap </button>
+  </div>
