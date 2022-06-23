@@ -1,27 +1,27 @@
 # CarRentalProjectFrontEnd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+# Tecnologies
+<li> Angular 11</li>
+<li> TypeScript </li>
+<li> Bootstrap 5 </li>
+<li> Jquery </li>
+<h3> FrontendTechniques </h3>
+<li> Pipe </li>
+<li> JWT (@auth0/angular-jwt) </li>
+<li> Service </li>
+<li> Toastr Service</li>
 
-## Development server
+### I will develop time creatively 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<br>
+<br>
+<h1>Screenshots
+  <img src="https://github.com/ahmtgckl/CarRentalProjectFrontEnd/blob/master/g%C3%B6rseller/1.JPG"><br>
+  <img src="https://github.com/ahmtgckl/CarRentalProjectFrontEnd/blob/master/g%C3%B6rseller/2.JPG"><br>
+  <img src="https://github.com/ahmtgckl/CarRentalProjectFrontEnd/blob/master/g%C3%B6rseller/3.JPG"><br>
+  <img src="https://github.com/ahmtgckl/CarRentalProjectFrontEnd/blob/master/g%C3%B6rseller/4.JPG"><br>
+  <img src="https://github.com/ahmtgckl/CarRentalProjectFrontEnd/blob/master/g%C3%B6rseller/5.JPG"><br>
+  <img src="https://github.com/ahmtgckl/CarRentalProjectFrontEnd/blob/master/g%C3%B6rseller/6.JPG"><br>
+  <img src="https://github.com/ahmtgckl/CarRentalProjectFrontEnd/blob/master/g%C3%B6rseller/7.JPG"><br>
+  <img src="https://github.com/ahmtgckl/CarRentalProjectFrontEnd/blob/master/g%C3%B6rseller/8.JPG"><br>
+  <img src="https://github.com/ahmtgckl/CarRentalProjectFrontEnd/blob/master/g%C3%B6rseller/9.JPG">
