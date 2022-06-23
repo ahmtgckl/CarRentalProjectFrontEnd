@@ -9,20 +9,16 @@ import { ResponseModel } from '../models/responseModel';
   providedIn: 'root'
 })
 export class BrandService {
-  apiUrl= "https://localhost:44310/api/"  //data başka bir adresten çekiliyorsa o adersin url kısmı kullanılır
-  constructor(private httpClient:HttpClient) { }
+  apiUrl = "https://localhost:44310/api/"  //data başka bir adresten çekiliyorsa o adersin url kısmı kullanılır
+  constructor(private httpClient: HttpClient) { }
 
-  getBrands():Observable<ListResponseModel<Brand>>{
-    let newPath=this.apiUrl+"Brands/getall";
+  getBrands(): Observable<ListResponseModel<Brand>> {
+    let newPath = this.apiUrl + "Brands/getall";
     return this.httpClient.get<ListResponseModel<Brand>>(newPath);
   }
-  addBrand(brand:Brand):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"brands/add",brand)
+  addBrand(brand: Brand): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "brands/add", brand)
   }
-
-
-
 
 
 }
-//Getbycarid

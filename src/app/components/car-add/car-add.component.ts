@@ -15,18 +15,18 @@ import { ColorService } from 'src/app/services/color.service';
 })
 export class CarAddComponent implements OnInit {
   carAddForm: FormGroup;
-  brands:Brand[]=[]
-  colors:Color[]=[]
-  selectedBrand=0
-  selectedColor=0
+  brands: Brand[] = []
+  colors: Color[] = []
+  selectedBrand = 0
+  selectedColor = 0
 
   constructor(
     private carService: CarService,
-    private brandService:BrandService,
-    private colorService:ColorService,
+    private brandService: BrandService,
+    private colorService: ColorService,
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
-    private route:Router
+    private route: Router
   ) { }
 
   ngOnInit(): void {
@@ -70,14 +70,17 @@ export class CarAddComponent implements OnInit {
 
 
 
-  getBrands(){
-    this.brandService.getBrands().subscribe(response=>{
-      this.brands=response.data
+  getBrands() {
+    this.brandService.getBrands().subscribe(response => {
+      this.brands = response.data
     })
   }
-  getColors(){
-    this.colorService.getColors().subscribe(response=>{
-      this.colors=response.data
+
+
+
+  getColors() {
+    this.colorService.getColors().subscribe(response => {
+      this.colors = response.data
     })
   }
 

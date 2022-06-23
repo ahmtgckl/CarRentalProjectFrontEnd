@@ -10,29 +10,16 @@
           <div class="mb-3">
             <label for="rentDate">Kiralama Tarihi </label>
             <div class="form-group">
-              <input
-                type="date"
-                id="rentDate"
-                formControlName="rentDate"
-                class="form-control"
-                placeholder="Kiralama Tarihi"
-
-                [min]="minDate"
-              />
+              <input type="date" id="rentDate" formControlName="rentDate" class="form-control"
+                placeholder="Kiralama Tarihi" [min]="minDate" />
             </div>
           </div>
 
           <div class="mb-3">
             <label for="returnDate">Teslim Tarihi</label>
             <div class="form-group">
-              <input
-                type="date"
-                id="returnDate"
-                formControlName="returnDate"
-                class="form-control"
-                placeholder="Teslim Tarihi"
-
-              />
+              <input type="date" id="returnDate" formControlName="returnDate" class="form-control"
+                placeholder="Teslim Tarihi" />
             </div>
           </div>
         </form>
@@ -40,17 +27,10 @@
 
       <div class="card-footer">
 
-        <button data-bs-dismiss="modal" (click)="isCarAvaible()" class="btn btn-fill btn-outline-success" >
+        <button data-bs-dismiss="modal" (click)="isCarAvaible()" class="btn btn-fill btn-outline-success">
           Ödemeye Geç
         </button>
       </div>
     </div>
   </div>
 </div>
-
-
-<!-- <button routerLink="/cars/carDetails/4/payment" class="btn btn-fill btn-outline-success"  >
-  Ödemeye geç <app-payment  *ngFor="let model of modelOfRental"
-  [modelOfRental]="modelOfRental"
-  ></app-payment>
-</button> -->

@@ -13,41 +13,41 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm:FormGroup;
-  userEmail:string;
-  @Input() user1:User;
+  loginForm: FormGroup;
+  userEmail: string;
+  @Input() user1: User;
 
-  constructor(private formBuilder:FormBuilder,
-    private authService:AuthService,
-    private toastrService:ToastrService,
-    private userService:UserService,
-    private router:Router,
-    private localStorage:LocalstorageService) { }
+  constructor(private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private toastrService: ToastrService,
+    private userService: UserService,
+    private router: Router,
+    private localStorage: LocalstorageService) { }
 
   ngOnInit(): void {
     this.createLoginForm()
 
 
   }
-  createLoginForm(){
-    this.loginForm=this.formBuilder.group({
-      email:["",Validators.required],
-      password:["",Validators.required],
+  createLoginForm() {
+    this.loginForm = this.formBuilder.group({
+      email: ["", Validators.required],
+      password: ["", Validators.required],
     })
   }
 
-  login(){
+  login() {
     if (this.loginForm.valid) {
-     // console.log(this.loginForm.value);
-      let loginModel=Object.assign({},this.loginForm.value)
-      this.authService.login(loginModel).subscribe(response=>{
+      // console.log(this.loginForm.value);
+      let loginModel = Object.assign({}, this.loginForm.value)
+      this.authService.login(loginModel).subscribe(response => {
         this.localStorage.saveToken(response.data.token)
-        this.authService.decodedTokenKey=this.authService.decodedToken(response.data.token);
+        this.authService.decodedTokenKey = this.authService.decodedToken(response.data.token);
         console.log(this.authService.getUserInfo());
         this.router.navigate(["/"]);
         this.toastrService.info("Giriş Yapıldı")
 
-      },responseError=>{
+      }, responseError => {
         //console.log(responseError);
         this.toastrService.error(responseError.error)
       })

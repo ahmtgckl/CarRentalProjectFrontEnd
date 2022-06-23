@@ -20,26 +20,26 @@ export class CarComponent implements OnInit {
 
   cars: CarDetails[] = [];
   carImages: CarImage[] = [];
-  baseUrl="https://localhost:44310/Uploads/Images/"
-  imageOfPath:string;
+  baseUrl = "https://localhost:44310/Uploads/Images/"
+  imageOfPath: string;
 
   brands: Brand[] = [];
   colors: Color[] = [];
 
-  filterText="";
-  cardetailFilter='';
-  brandFilter: number=0;
-  colorFilter: number=0;
-  branddFilter:number=0;
-  colorrFilter:number=0;
+  filterText = "";
+  cardetailFilter = '';
+  brandFilter: number = 0;
+  colorFilter: number = 0;
+  branddFilter: number = 0;
+  colorrFilter: number = 0;
 
 
   constructor(private carService: CarService,
     private activatedRoute: ActivatedRoute,
     private brandService: BrandService,
     private colorService: ColorService,
-    private carImageService:CarImageService,
-    private toastrService:ToastrService) { }     //service'leri kullanabilmek için yapılır
+    private carImageService: CarImageService,
+    private toastrService: ToastrService) { }     //service'leri kullanabilmek için yapılır
 
   ngOnInit(): void {
     this.getBrands();
@@ -130,18 +130,18 @@ export class CarComponent implements OnInit {
 
 
 
-  getSelectedColor(colorId:number){
-    if(this.colorFilter == colorId) return true;
+  getSelectedColor(colorId: number) {
+    if (this.colorFilter == colorId) return true;
     else return false;
   }
 
 
 
 
-  image(carId:number){
-    this.carImageService.getCarImagesByCarId(carId).subscribe(response=>{
-      const imagePath=response.data[0].imagePath
-      this.imageOfPath= this.baseUrl+imagePath;
+  image(carId: number) {
+    this.carImageService.getCarImagesByCarId(carId).subscribe(response => {
+      const imagePath = response.data[0].imagePath
+      this.imageOfPath = this.baseUrl + imagePath;
       console.log(this.imageOfPath)
     })
     return this.imageOfPath
@@ -150,14 +150,10 @@ export class CarComponent implements OnInit {
 
 
 
-  setFilter(){
+  setFilter() {
     this.toastrService.success("filtre uygulandı")
     console.log("FİLTRE")
   }
-
-
-
-
 
 
 

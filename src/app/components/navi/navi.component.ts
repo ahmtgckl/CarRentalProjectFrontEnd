@@ -12,28 +12,28 @@ import { LocalstorageService } from 'src/app/services/localstorage.service';
   styleUrls: ['./navi.component.css']
 })
 export class NaviComponent implements OnInit {
-  userInfo:UserModel=this.authService.getUserInfo()
+  userInfo: UserModel = this.authService.getUserInfo()
 
-  constructor(private authService:AuthService, private localStorageService:LocalstorageService,private router:Router,private toastrservice:ToastrService) { }
+  constructor(private authService: AuthService, private localStorageService: LocalstorageService, private router: Router, private toastrservice: ToastrService) { }
 
   ngOnInit(): void {
     this.ngDoCheck()
   }
 
 
-  isAuthenticated(){
+  isAuthenticated() {
     return this.authService.isAuthenticated();
   }
 
-  logout(){
+  logout() {
     this.localStorageService.removeToken();
     this.toastrservice.success("başarı ile çıkış yaptınız")
     this.router.navigate([""])
 
   }
 
-  ngDoCheck(){
-    if(this.userInfo!==this.authService.user){
+  ngDoCheck() {
+    if (this.userInfo !== this.authService.user) {
       this.userInfo = this.authService.user;
     }
   }

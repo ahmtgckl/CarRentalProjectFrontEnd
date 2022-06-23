@@ -9,14 +9,13 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
-  apiUrl="https://localhost:44310/api/"
-  constructor(private httpClient:HttpClient) { }
+  apiUrl = "https://localhost:44310/api/"
+  constructor(private httpClient: HttpClient) { }
 
 
-  getByUserEmail(email:string):Observable<SingleResponseModel<User>>{
-    let newPath = this.apiUrl + "Users/GetByUserEmail?email="+email;
+  getByUserEmail(email: string): Observable<SingleResponseModel<User>> {
+    let newPath = this.apiUrl + "Users/GetByUserEmail?email=" + email;
     return this.httpClient.get<SingleResponseModel<User>>(newPath)
-
   }
 
 

@@ -7,15 +7,6 @@
       <div class="card-body">
 
         <form [formGroup]="carAddForm" accept-charset="UTF-8" role="form">
-
-          <!-- <div class="mb-3">
-            <label for="brandId">Marka</label>
-            <div class="form-group">
-              <input type="number" id="brandId" formControlName="brandId" class="form-control" placeholder="Marka">
-            </div>
-          </div> -->
-
-
           <div class="form-group">
             <select [(ngModel)]="selectedBrand" class="form-control" formControlName="brandId" class="form-select">
               <option value="0">Marka Seç</option>
@@ -35,36 +26,31 @@
             </select>
           </div>
 
-          <!-- <div class="mb-3">
-            <label for="colorId">Renk</label>
-            <div class="form-group">
-              <input type="number" id="colorId" formControlName="colorId" class="form-control" placeholder="Renk">
-            </div>
-          </div> -->
 
-            <div class="form-group">
-              <input type="text" id="modelName" formControlName="modelName" class="form-control"
-                placeholder="Model adı giriniz">
-            </div>
-
-            <div class="form-group">
-              <input type="number" id="modelYear" formControlName="modelYear" class="form-control"
-                placeholder="Model yılı giriniz">
-            </div>
+          <div class="form-group">
+            <input type="text" id="modelName" formControlName="modelName" class="form-control"
+              placeholder="Model adı giriniz">
+          </div>
 
 
-            <div class="form-group">
-              <input type="number" id="dailyPrice" formControlName="dailyPrice" class="form-control"
-                placeholder="Günlük Ücret giriniz">
-            </div>
+          <div class="form-group">
+            <input type="number" id="modelYear" formControlName="modelYear" class="form-control"
+              placeholder="Model yılı giriniz">
+          </div>
 
 
-            <div class="form-group">
-              <input type="text" id="description" formControlName="description" class="form-control"
-                placeholder="Detay giriniz">
-            </div>
+          <div class="form-group">
+            <input type="number" id="dailyPrice" formControlName="dailyPrice" class="form-control"
+              placeholder="Günlük Ücret giriniz">
+          </div>
 
-            <!-- <div class="form-group">
+
+          <div class="form-group">
+            <input type="text" id="description" formControlName="description" class="form-control"
+              placeholder="Detay giriniz">
+          </div>
+
+          <!-- <div class="form-group">
               <input type="file" id="dosyaYukle" formControlName="Resim" class="form-control-file"
                 placeholder="Resim">
             </div> -->

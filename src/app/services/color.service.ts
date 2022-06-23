@@ -9,15 +9,15 @@ import { ResponseModel } from '../models/responseModel';
   providedIn: 'root'
 })
 export class ColorService {
-  apiUrl="https://localhost:44310/api/"
-  constructor(private httpClient:HttpClient) { }
+  apiUrl = "https://localhost:44310/api/"
+  constructor(private httpClient: HttpClient) { }
 
-  getColors():Observable<ListResponseModel<Color>>{
-    let newPath=this.apiUrl+"Colors/getall";
+  getColors(): Observable<ListResponseModel<Color>> {
+    let newPath = this.apiUrl + "Colors/getall";
     return this.httpClient.get<ListResponseModel<Color>>(newPath);
   }
 
-  addColor(color:Color):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"colors/Add",color)
+  addColor(color: Color): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "colors/Add", color)
   }
 }

@@ -33,8 +33,8 @@
     <img *ngIf="car.imagePath" [src]="baseUrl+car.imagePath" class="card-img-top"
       style="object-fit: cover; margin-top: 10px;" width="100" height="50%" alt="...">
 
-    <img *ngIf="!car.imagePath" [src]="baseUrl+'DefaultImage.jpg'" class="card-img-top" style="object-fit: cover; margin-top: 10px;"
-      width="100" height="50%" alt="...">
+    <img *ngIf="!car.imagePath" [src]="baseUrl+'DefaultImage.jpg'" class="card-img-top"
+      style="object-fit: cover; margin-top: 10px;" width="100" height="50%" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{ car.modelName }}</h5>
 

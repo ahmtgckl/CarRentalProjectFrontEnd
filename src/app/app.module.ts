@@ -61,7 +61,7 @@ export function tokenGetter() {
     FormsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot({positionClass:"toast-buttom-right"}),
+    ToastrModule.forRoot({ positionClass: "toast-buttom-right" }),
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
@@ -74,7 +74,7 @@ export function tokenGetter() {
 
 
 
-  providers: [{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

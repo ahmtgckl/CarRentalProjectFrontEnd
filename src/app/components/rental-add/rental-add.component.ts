@@ -22,16 +22,16 @@ export class RentalAddComponent implements OnInit {
   rentalAddForm: FormGroup;
   carDetail: CarDetails[];
   minDate = new Date();
-  modelOfRental:Rental;
+  modelOfRental: Rental;
   constructor(
     private formBuilder: FormBuilder,
     private carService: CarService,
     private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute,
     private rentalService: RentalService,
-    private paymentService:PaymentService,
-    private router:Router
-  ) {}
+    private paymentService: PaymentService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     console.log(this.modelOfRental)
@@ -96,25 +96,25 @@ export class RentalAddComponent implements OnInit {
         .subscribe((response) => {
           this.toastrService.success(response.message, 'Başarılı');
           this.sendData();
-          this.router.navigate(["/cars/payment",this.carDetail[0].carId])
+          this.router.navigate(["/cars/payment", this.carDetail[0].carId])
 
         },
-        (responseError)=>{
-          this.toastrService.error(responseError.error)
-        }
+          (responseError) => {
+            this.toastrService.error(responseError.error)
+          }
         );
     }
   }
-  sendData(){
-    this.modelOfRental=Object.assign({},this.rentalAddForm.value);// buradan aldığım veriyi başka componentlarda da kullanmak için bu servisi yazdık
+  sendData() {
+    this.modelOfRental = Object.assign({}, this.rentalAddForm.value);// buradan aldığım veriyi başka componentlarda da kullanmak için bu servisi yazdık
     //console.log(this.modelOfRental)
     this.paymentService.updateData(this.modelOfRental)
   }
-   /* totalPrice(){
-     let rentdate=this.modelOfRental.rentDate
-     let returndate=this.modelOfRental.returnDate //Refactor
-     let rentDatee = new Date(this.modelOfRental.rentDate).getTime()
-     let returnDatee= new Date(this.modelOfRental.returnDate).getTime();
-     console.log(rentDatee)
-   } */
+  /* totalPrice(){
+    let rentdate=this.modelOfRental.rentDate
+    let returndate=this.modelOfRental.returnDate //Refactor
+    let rentDatee = new Date(this.modelOfRental.rentDate).getTime()
+    let returnDatee= new Date(this.modelOfRental.returnDate).getTime();
+    console.log(rentDatee)
+  } */
 }

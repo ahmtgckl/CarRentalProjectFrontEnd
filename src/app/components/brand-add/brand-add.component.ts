@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder,FormGroup,FormControl,Validators,}from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { BrandService } from 'src/app/services/brand.service';
 
@@ -14,7 +14,7 @@ export class BrandAddComponent implements OnInit {
     private formBuilder: FormBuilder,
     private brandService: BrandService,
     private toastrService: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.createBrandAddForm();
@@ -36,7 +36,7 @@ export class BrandAddComponent implements OnInit {
         (responseError) => {
           if (responseError.error.Errors.length > 0) {
             for (let i = 0; i < responseError.error.Errors.length; i++) {
-              this.toastrService.error(responseError.error.Errors[i].ErrorMessage,'Doğrulama hatası');
+              this.toastrService.error(responseError.error.Errors[i].ErrorMessage, 'Doğrulama hatası');
             }
           }
         }

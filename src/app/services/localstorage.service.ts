@@ -7,16 +7,16 @@ export class LocalstorageService {
 
   constructor() { }
 
-  getToken():any{
+  getToken(): any {
     return localStorage.getItem('token')
   }
 
-  removeToken(){
+  removeToken() {
     localStorage.removeItem('token');
   }
 
-  saveToken(token:string){
-    localStorage.setItem('token',token)
+  saveToken(token: string) {
+    localStorage.setItem('token', token)
 
   }
 }

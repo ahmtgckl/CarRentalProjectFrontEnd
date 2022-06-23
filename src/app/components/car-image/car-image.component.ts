@@ -10,27 +10,27 @@ import { CarImageService } from 'src/app/services/car-image.service';
   styleUrls: ['./car-image.component.css']
 })
 export class CarImageComponent implements OnInit {
-  carImages:CarImage[]=[];
-  baseUrl="https://localhost:44310/Uploads/Images/"
-  constructor(private carImageService:CarImageService,private activedRoute:ActivatedRoute ) { }
+  carImages: CarImage[] = [];
+  baseUrl = "https://localhost:44310/Uploads/Images/"
+  constructor(private carImageService: CarImageService, private activedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activedRoute.params.subscribe(params=>{
+    this.activedRoute.params.subscribe(params => {
       if (params["carId"]) {
         this.getCarImagesByCarId(params["carId"])
       }
     })
   }
 
-  getCarImagesByCarId(carId:number){
-    this.carImageService.getCarImagesByCarId(carId).subscribe(response=>{
-      this.carImages=response.data;
+  getCarImagesByCarId(carId: number) {
+    this.carImageService.getCarImagesByCarId(carId).subscribe(response => {
+      this.carImages = response.data;
 
     })
   }
 
-  getActiveImageClass(carImage:CarImage){
-    if (carImage===this.carImages[0]) {
+  getActiveImageClass(carImage: CarImage) {
+    if (carImage === this.carImages[0]) {
       return "active"
     } else {
       return ""

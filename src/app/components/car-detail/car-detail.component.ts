@@ -10,21 +10,22 @@ import { CarService } from 'src/app/services/car.service';
   styleUrls: ['./car-detail.component.css']
 })
 export class CarDetailComponent implements OnInit {
-  cars:CarDetails[]=[];
-  constructor(private carService:CarService,private activatedRoute:ActivatedRoute) { }
+  cars: CarDetails[] = [];
+  constructor(private carService: CarService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-    this.activatedRoute.params.subscribe(params=>{
+    this.activatedRoute.params.subscribe(params => {
       if (params["carId"]) {
-       this.getCarDetailByCarId(params["carId"])
+        this.getCarDetailByCarId(params["carId"])
       }
     })
   }
 
-  getCarDetailByCarId(carId:number){
-    this.carService.getCarDetailByCarId(carId).subscribe(response=>{
-      this.cars=response.data})
+  getCarDetailByCarId(carId: number) {
+    this.carService.getCarDetailByCarId(carId).subscribe(response => {
+      this.cars = response.data
+    })
   }
 
 }

@@ -2,16 +2,16 @@
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  width:200px;
+  width: 200px;
 }
 
 
-.active{
+.active {
   background: #000 !important;
   border-color: black;
 }
 
 
-.list-group-item{
-  font-weight:500;
+.list-group-item {
+  font-weight: 500;
 }

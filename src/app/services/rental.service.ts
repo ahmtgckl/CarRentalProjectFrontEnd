@@ -9,20 +9,18 @@ import { ResponseModel } from '../models/responseModel';
   providedIn: 'root'
 })
 export class RentalService {
-  apiUrl= "https://localhost:44310/api/Rental/"
+  apiUrl = "https://localhost:44310/api/Rental/"
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  getRentals():Observable<ListResponseModel<RentalDetails>>{
-    let newPath=this.apiUrl+"getrentalsdetails"
+  getRentals(): Observable<ListResponseModel<RentalDetails>> {
+    let newPath = this.apiUrl + "getrentalsdetails"
     return this.httpClient.get<ListResponseModel<RentalDetails>>(newPath);
   }
 
 
-
-
-  isCarAvaible(carId:number){
-    let newPath=this.apiUrl+"iscaravaible?cardId="+carId;
+  isCarAvaible(carId: number) {
+    let newPath = this.apiUrl + "iscaravaible?cardId=" + carId;
     return this.httpClient.get<ResponseModel>(newPath);
 
   }
